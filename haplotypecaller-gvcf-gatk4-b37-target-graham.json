@@ -16,10 +16,6 @@
   "##_COMMENT4": "MISCELLANEOUS PARAMETERS",
   "#HaplotypeCallerGvcf_GATK4.HaplotypeCaller.make_gvcf": "True",
   "#HaplotypeCallerGvcf_GATK4.HaplotypeCaller.contamination": "Float? (optional)",
-
-  "##_COMMENT5": "DOCKERS", 
-  "#HaplotypeCallerGvcf_GATK4.gatk_docker_override": "String? (optional)",
-  "#HaplotypeCallerGvcf_GATK4.gitc_docker_override": "String? (optional)",
   
   "##_COMMENT6": "PATHS", 
   "#HaplotypeCallerGvcf_GATK4.gatk_path_override": "String? (optional)",
@@ -36,10 +32,5 @@
   "##_COMMENT9": "DISK SIZE ALLOCATION",
   "#HaplotypeCallerGvcf_GATK4.HaplotypeCaller.disk_space_gb": "Int? (optional)",
   "#HaplotypeCallerGvcf_GATK4.MergeGVCFs.disk_space_gb": "Int? (optional)",
-  "#HaplotypeCallerGvcf_GATK4.CramToBamTask.disk_space_gb": "Int? (optional)",
-
-  "##_COMMENT10": "PREEMPTION",
-  "#HaplotypeCallerGvcf_GATK4.HaplotypeCaller.preemptible_attempts": "Int? (optional)",
-  "#HaplotypeCallerGvcf_GATK4.MergeGVCFs.preemptible_attempts": "Int? (optional)",
-  "#HaplotypeCallerGvcf_GATK4.CramToBamTask.preemptible_attempts": "Int? (optional)"
+  "#HaplotypeCallerGvcf_GATK4.CramToBamTask.disk_space_gb": "Int? (optional)"
 }
