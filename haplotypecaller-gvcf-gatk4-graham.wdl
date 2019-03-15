@@ -123,6 +123,8 @@ task CramToBamTask {
     set -e
     set -o pipefail
 
+    module load samtools/1.9
+
     ${samtools_path} view -h -T ${ref_fasta} ${input_cram} |
     ${samtools_path} view -b -o ${sample_name}.bam -
     ${samtools_path} index -b ${sample_name}.bam
@@ -167,7 +169,7 @@ task HaplotypeCaller {
 
   command <<<
   set -e
-  
+  module load gatk/4.0.12.0
     ${gatk_path} --java-options "-Xmx${command_mem_gb}G ${java_opt}" \
       HaplotypeCaller \
       -R ${ref_fasta} \
@@ -205,6 +207,7 @@ task MergeGVCFs {
 
   command <<<
   set -e
+  module load gatk/4.0.12.0
 
     ${gatk_path} --java-options "-Xmx${command_mem_gb}G"  \
       MergeVcfs \
