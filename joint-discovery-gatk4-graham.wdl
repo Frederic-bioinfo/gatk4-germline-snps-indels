@@ -44,9 +44,12 @@
 workflow JointGenotyping {
   # Input Sample
   String callset_name
-  Array[String] sample_names
-  Array[File] input_gvcfs 
-  Array[File] input_gvcfs_indices  
+  String sample_name_list
+  String input_gvcf_list
+  String input_gvcf_indice_list
+  Array[String] sample_names = read_tsv(sample_name_list)
+  Array[File] input_gvcfs = read_tsv(input_gvcf_list)
+  Array[File] input_gvcfs_indices = read_tsv(input_gvcf_indice_list)
  
   # Reference and Resources
   File ref_fasta
