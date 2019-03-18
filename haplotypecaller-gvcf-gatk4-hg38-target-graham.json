@@ -1,0 +1,34 @@
+{
+  "##_COMMENT1": "INPUT BAM",
+  "HaplotypeCallerGvcf_GATK4.input_bam": "##Input_Bam##",
+  "HaplotypeCallerGvcf_GATK4.input_bam_index": "##Input_Bam_Index##",
+
+  "##_COMMENT2": "REFERENCE FILES",
+  "HaplotypeCallerGvcf_GATK4.ref_dict": "/project/rrg-adroit-ab/common_reference/GATK4/hg38/Homo_sapiens_assembly38.dict",
+  "HaplotypeCallerGvcf_GATK4.ref_fasta": "/project/rrg-adroit-ab/common_reference/GATK4/hg38/Homo_sapiens_assembly38.fasta",
+  "HaplotypeCallerGvcf_GATK4.ref_fasta_index": "/project/rrg-adroit-ab/common_reference/GATK4/hg38/Homo_sapiens_assembly38.fasta.fai",
+
+  "##_COMMENT3": "INTERVALS",
+  "HaplotypeCallerGvcf_GATK4.scattered_calling_intervals_list": "##Interval_File##",
+  
+  "##_COMMENT4": "MISCELLANEOUS PARAMETERS",
+  "HaplotypeCallerGvcf_GATK4.HaplotypeCaller.make_gvcf": "True",
+  "#HaplotypeCallerGvcf_GATK4.HaplotypeCaller.contamination": "Float? (optional)",
+  
+  "##_COMMENT6": "PATHS", 
+  "HaplotypeCallerGvcf_GATK4.gatk_path_override": "gatk",
+  "#HaplotypeCallerGvcf_GATK4.samtools_path_override": "String? (optional)",
+
+  "##_COMMENT7": "JAVA OPTIONS", 
+  "#HaplotypeCallerGvcf_GATK4.HaplotypeCaller.java_options": "String? (optional)",
+
+  "##_COMMENT8": "MEMORY ALLOCATION", 
+  "#HaplotypeCallerGvcf_GATK4.HaplotypeCaller.mem_gb": "Int? (optional)",
+  "#HaplotypeCallerGvcf_GATK4.MergeGVCFs.mem_gb": "Int? (optional)",
+  "#HaplotypeCallerGvcf_GATK4.CramToBamTask.machine_mem_gb": "Int? (optional)",
+
+  "##_COMMENT9": "DISK SIZE ALLOCATION",
+  "#HaplotypeCallerGvcf_GATK4.HaplotypeCaller.disk_space_gb": "Int? (optional)",
+  "#HaplotypeCallerGvcf_GATK4.MergeGVCFs.disk_space_gb": "Int? (optional)",
+  "#HaplotypeCallerGvcf_GATK4.CramToBamTask.disk_space_gb": "Int? (optional)"
+}
