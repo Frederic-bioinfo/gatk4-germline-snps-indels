@@ -357,8 +357,7 @@ task GetNumberOfSamples {
     wc -l ${sample_name_map} | awk '{print $1}'
   >>>
   runtime {
-    memory: "1 GB"
-    preemptible: 5
+    requested_memory_per_cpu: "1000M"
   }
   output {
     Int sample_count = read_int(stdout())
@@ -413,8 +412,8 @@ task ImportGVCFs {
 
   >>>
   runtime {
-    memory: "7 GB"
-    cpu: "2"
+    requested_memory_per_cpu: "8000M"
+    cpus: "2"
   }
   output {
     File output_genomicsdb = "${workspace_dir_name}.tar"
@@ -456,8 +455,8 @@ task GenotypeGVCFs {
      -L ${interval}
   >>>
   runtime {
-    requested_memory_per_cpu: "7000M"
-    cpu: "2"
+    requested_memory_per_cpu: "8000M"
+    cpus: "2"
   }
   output {
     File output_vcf = "${output_vcf_filename}"
@@ -495,7 +494,7 @@ task HardFilterAndMakeSitesOnlyVcf {
   }
   runtime {
     requested_memory_per_cpu: "3500M"
-    cpu: "1"
+    cpus: "1"
   }
   output {
     File variant_filtered_vcf = "${variant_filtered_vcf_filename}"
@@ -543,7 +542,7 @@ task IndelsVariantRecalibrator {
   }
   runtime {
     requested_memory_per_cpu: "26000M"
-    cpu: "2"
+    cpus: "2"
   }
   output {
     File recalibration = "${recalibration_filename}"
@@ -597,7 +596,7 @@ task SNPsVariantRecalibratorCreateModel {
   }
   runtime {
     requested_memory_per_cpu: "104000M"
-    cpu: "2"
+    cpus: "2"
   }
   output {
     File model_report = "${model_report_filename}"
@@ -647,7 +646,7 @@ task SNPsVariantRecalibrator {
   }
   runtime {
     requested_memory_per_cpu: "3500M"
-    cpu: "2"
+    cpus: "2"
   }
   output {
     File recalibration = "${recalibration_filename}"
@@ -675,7 +674,7 @@ task GatherTranches {
   >>>
   runtime {
     requested_memory_per_cpu: "7000M"
-    cpu: "2"
+    cpus: "2"
   }
   output {
     File tranches = "${output_filename}"
@@ -725,7 +724,7 @@ task ApplyRecalibration {
   }
   runtime {
     requested_memory_per_cpu: "7000"
-    cpu: "1"
+    cpus: "1"
   }
   output {
     File recalibrated_vcf = "${recalibrated_vcf_filename}"
@@ -760,7 +759,7 @@ task GatherVcfs {
   >>>
   runtime {
     requested_memory_per_cpu: "7000M"
-    cpu: "1"
+    cpus: "1"
   }
   output {
     File output_vcf = "${output_vcf_name}"
@@ -798,7 +797,7 @@ task CollectVariantCallingMetrics {
   }
   runtime {
     requested_memory_per_cpu: "7000M"
-    cpu: 2
+    cpus: 2
   }
 }
 
@@ -823,7 +822,7 @@ task GatherMetrics {
   >>>
   runtime {
     requested_memory_per_cpu: "3000M"
-    cpu: "1"
+    cpus: "1"
   }
   output {
     File detail_metrics_file = "${output_prefix}.variant_calling_detail_metrics"
@@ -887,6 +886,7 @@ task DynamicallyCombineIntervals {
 
   runtime {
     requested_memory_per_cpu: "3000M"
+    runtime_minutes: "20"
    }
 
   output {
