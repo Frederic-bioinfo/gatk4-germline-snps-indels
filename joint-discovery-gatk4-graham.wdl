@@ -185,7 +185,7 @@ workflow JointGenotyping {
       gatk_path = gatk_path
   }
 
-  if (num_gvcfs > 1000) {
+  if (num_gvcfs > 15000) {
   call SNPsVariantRecalibratorCreateModel {
       input:
         sites_only_variant_filtered_vcf = SitesOnlyGatherVcf.output_vcf,
@@ -239,7 +239,7 @@ workflow JointGenotyping {
     }
   }
 
-  if (num_gvcfs <= 1000){
+  if (num_gvcfs <= 15000){
     call SNPsVariantRecalibrator as SNPsVariantRecalibratorClassic {
       input:
           sites_only_variant_filtered_vcf = SitesOnlyGatherVcf.output_vcf,
